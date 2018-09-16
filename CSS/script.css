@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 400;
+}
+
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/* -------------------------------- */
+/* HEADER */
+/* -------------------------------- */
+
+body header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0,0,0,0.9)), url(../images/header-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 10% 0;
+    height: 50vh;
+}
+
+.header-main-title {
+    position: absolute;
+    width: 1140px;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-main-title h1 {
+    float:left;
+    font-size:800%;
+    letter-spacing: 3px;
+    border-bottom: 1px solid rgb(86, 183, 248);
+}
+
+.header-main-title h2 {
+    float:left;
+    margin-top: 20px;
+    font-size: 150%;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.header-title-1 { color: rgb(49, 165, 243); }
+.header-title-2 { color: rgb(255, 255, 255); }
+
+
+/* -------------------------------- */
+/* FORM */
+/* -------------------------------- */
+
+
+.training-form {
+    background-color: rgb(255, 255, 255);
+    padding: 80px 0;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.form {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(86, 183, 248);
+}
+
+input { margin: 0 30px; }
+
+input[type=text] {
+    float: left;
+    height: 35px;
+}
+
+input[type=text] {
+    padding-left: 10px;
+    width: 20%;
+}
+
+input[type=submit]:link,
+input[type=submit]:visited,
+input[type=submit] {
+    background-color: rgb(86, 183, 248);
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-weight: 300;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: rgb(4, 152, 250);
+}
+
+
+
+
+/* -------------------------------- */
+/* BUTTONS */
+/* -------------------------------- */
+
+.btn {
+    background-color: rgb(86, 183, 248);
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-weight: 300;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+*:focus { outline: none };
