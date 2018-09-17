@@ -124,17 +124,46 @@ input[type=submit]:active {
 /* BUTTONS */
 /* -------------------------------- */
 
-.btn {
+
+.table-btn {
     background-color: rgb(86, 183, 248);
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 30px;
     font-weight: 300;
     color: #fff;
     border: none;
-    cursor: pointer;
-    width: 100%;
+    width: 95%;
+    padding: 5px 30px;
+    font-size: 20px;
 }
+
+.btn-title {
+    cursor: pointer;
+}
+
+.btn-icon:visited,
+.btn-icon:link,
+.btn-icon {
+    color: rgb(255, 255, 255);
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-circle { 
+    margin-right: 30px;
+    padding: 0 30px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.btn-icon:hover,
+.btn-icon:active {
+    color: rgb(131, 255, 245);
+}
+
+
 
 *:focus { outline: none };
