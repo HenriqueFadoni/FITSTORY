@@ -1,11 +1,12 @@
-import DataCtrl from "./modules/dataController";
+import * as DataCtrl from "./modules/dataController";
 import * as UICtrl from "./views/UIController";
 import { elements } from './views/base';
 
 /** GLOBAL APP CONTROLLER */
+const state = {};
 
 const ctrlAddItem = () => {
-    let input, newItem;
+    let input;
 
     // 1 - Get the field input data
     input = UICtrl.getInput();
@@ -13,10 +14,8 @@ const ctrlAddItem = () => {
     if (input.bodyPart !== "" && input.exercise !== "" && input.weight !== "") {
 
         // 2- Add the item to the dataController
-        newItem = DataCtrl.addItem(input.bodyPart, input.exercise, input.weight);
-
+        const newActivity = DataCtrl.addActivity(input.bodyPart, input.exercise, input.weight);
         // 3- Add the item to the UI
-
         // 4- Clear the fields
 
     } else {
@@ -26,4 +25,3 @@ const ctrlAddItem = () => {
 
 
 elements.addButton.addEventListener('click', ctrlAddItem);
-
