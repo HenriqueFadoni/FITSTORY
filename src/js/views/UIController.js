@@ -7,3 +7,7 @@ export const getInput = () => {
         weight: elements.weightInput.value
     }
 }
+
+export const addListActivity = (obj) => {
+    console.log('gg');
+}
