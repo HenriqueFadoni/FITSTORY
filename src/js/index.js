@@ -15,8 +15,11 @@ const ctrlAddItem = () => {
 
         // 2- Add the item to the dataController
         const newActivity = DataCtrl.addActivity(input.bodyPart, input.exercise, input.weight);
+        const newDatas = DataCtrl.report();
         // 3- Add the item to the UI
-        UICtrl.addListActivity(newActivity);
+        console.log(newActivity);
+        console.log(newDatas);
+        UICtrl.addListActivity(newActivity, newDatas);
         // 4- Clear the fields
 
     } else {

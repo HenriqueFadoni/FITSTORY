@@ -21,6 +21,9 @@ export const addActivity = (bodyPart, exercise, weight) => {
 
     let newData = new buildActivity(id, bodyPart, exercise, weight);
     dataList.push(newData);
-    console.log(dataList);
     return newData;
+}
+
+export const report = () => {
+    return dataList;
 }
