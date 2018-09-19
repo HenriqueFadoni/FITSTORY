@@ -1,7 +1,6 @@
 import { elements } from './base';
 
-const newDatasArr = [];
-const filteredData = [];
+const alreadyCreated = [];
 
 export const getInput = () => {
     return {
@@ -11,43 +10,32 @@ export const getInput = () => {
     }
 }
 
-export const addListActivity = (newActivity, newDatas) => {
-    let html, newHtml;
+export const addActivityToUI = (exerciseList,bodyPart) => {
+    let html, newHtml, idx, lastAdded, bodyPartLower;
+
+    bodyPartLower = bodyPart.toLowerCase();
+    idx = exerciseList[`${bodyPartLower}`].length - 1;
+    lastAdded = Object.values(exerciseList[`${bodyPartLower}`][idx]);
+    
 
 
-    if (validation(newActivity, newDatas) == true) {
-        console.log('funciona');
+    //SE O ELEMENTO JA EXISTIR
+    if(alreadyCreated.find(bodyPart) !== undefined || alreadyCreated.find(bodyPart) !== null){
+        let position = `.${bodyPartLower}`;
+    
+        html = `<ul><li>%exercise%</li><li>%weight%</li></ul>`;
+
+        newHtml = html.replace(`%exercise%`, lastAdded[0]);
+        newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
+
+        document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
+    } 
+    //SE O ELEMENTO N EXISTIR
+    else {
+        AlreadyCreated.push(bodyPartLower);
     }
-    let element = elements.exerciseList;
+    
 
-    html = '<div class="row table-btn"> '
-        + '<div class="col span-2-of-2 js--body-part">'
-        + '<a class="btn-title" hreft="#">%bodyPart%</a>'
-        + '<ion-icon name="arrow-dropdown-circle" class="btn-icon arrow-dropdown-circle"></ion-icon>'
-        + '<ion-icon name="close-circle" class="btn-icon close-circle"></ion-icon></div></div>'
-        + '<div class="row table-argument">'
-        + '<div class="exercise-name-result col span-1-of-2">%exercise%</div>'
-        + '<div class="weight-number-result col span-1-of-2">%weight%</div></div>';
-
-    newHtml = html.replace('%bodyPart%', newActivity.bodyPart);
-    newHtml = newHtml.replace('%exercise%', newActivity.exercise);
-    newHtml = newHtml.replace('%weight%', newActivity.weight);
-
-    document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
-}
-
-const validation = (newActivity, newDatas) => {
-    const newActivityArr = Object.values(newActivity);
-
-    newDatas.forEach((element, index) => {
-        if (newDatasArr.length === index) {
-            newDatasArr.push(Object.values(element));
-        }
-    });
-    newDatasArr.forEach((element, index) => {
-        filteredData[index] = newDatasArr[index][1];
-    });
-    console.log(filteredData);
-
-
+    console.log(exerciseList);
+    console.log(lastAdded);
 }

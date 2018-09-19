@@ -3,7 +3,6 @@ import * as UICtrl from "./views/UIController";
 import { elements } from './views/base';
 
 /** GLOBAL APP CONTROLLER */
-const state = {};
 
 const ctrlAddItem = () => {
     let input;
@@ -14,12 +13,9 @@ const ctrlAddItem = () => {
     if (input.bodyPart !== "" && input.exercise !== "" && input.weight !== "") {
 
         // 2- Add the item to the dataController
-        const newActivity = DataCtrl.addActivity(input.bodyPart, input.exercise, input.weight);
-        const newDatas = DataCtrl.report();
+        const newActivityList = DataCtrl.addActivityToList(input.bodyPart, input.exercise, input.weight);
         // 3- Add the item to the UI
-        console.log(newActivity);
-        console.log(newDatas);
-        UICtrl.addListActivity(newActivity, newDatas);
+        UICtrl.addActivityToUI(newActivityList, input.bodyPart);
         // 4- Clear the fields
 
     } else {

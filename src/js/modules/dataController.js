@@ -1,29 +1,18 @@
-function buildActivity(id, bodyPart, exercise, weight) {
-    return {
-        id,
-        bodyPart,
-        exercise,
-        weight
-    }
-}
+const activities = {};
 
-const dataList = [];
+export const addActivityToList = (bodyPart, exercise, weight) => {
+    //let id;
 
-export const addActivity = (bodyPart, exercise, weight) => {
-    let id;
-
-    if (dataList.length > 0) {
-        id = dataList[dataList.length - 1].id + 1;
-    } 
-    else {
-        id = 0;
+    let lowerCaseBodyPart = bodyPart.toLowerCase();
+    
+    if (!activities[lowerCaseBodyPart]){
+        activities[lowerCaseBodyPart] = [];
+        //id = 0;
     }
 
-    let newData = new buildActivity(id, bodyPart, exercise, weight);
-    dataList.push(newData);
-    return newData;
-}
+    //id = activities[lowerCaseBodyPart].length;
 
-export const report = () => {
-    return dataList;
+    activities[lowerCaseBodyPart].push({exercise, weight});
+
+    return activities;
 }
