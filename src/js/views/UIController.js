@@ -16,11 +16,9 @@ export const addActivityToUI = (exerciseList,bodyPart) => {
     bodyPartLower = bodyPart.toLowerCase();
     idx = exerciseList[`${bodyPartLower}`].length - 1;
     lastAdded = Object.values(exerciseList[`${bodyPartLower}`][idx]);
-    
-
 
     //SE O ELEMENTO JA EXISTIR
-    if(alreadyCreated.find(bodyPart) !== undefined || alreadyCreated.find(bodyPart) !== null){
+    if(alreadyCreated.find(bodyPartLower) !== undefined || alreadyCreated.find(bodyPart) !== null){
         let position = `.${bodyPartLower}`;
     
         html = `<ul><li>%exercise%</li><li>%weight%</li></ul>`;
