@@ -53,7 +53,7 @@ export const addActivityToUI = (exerciseList, bodyPart) => {
                 </tr>
         </tbody>`;
 
-        newHtml = html.replace(`%bodyPart%`, bodyPartLower);
+        newHtml = html.replace(`%bodyPart%`, bodyPart.toUpperCase());
         newHtml = newHtml.replace(`%exercise%`, lastAdded[0]);
         newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
 
