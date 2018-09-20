@@ -17,6 +17,7 @@ const ctrlAddItem = () => {
         // 3- Add the item to the UI
         UICtrl.addActivityToUI(newActivityList, input.bodyPart);
         // 4- Clear the fields
+        UICtrl.clearFields();
 
     } else {
         alert("Please, input some data.");

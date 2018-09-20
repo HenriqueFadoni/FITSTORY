@@ -1,4 +1,4 @@
-import { elements } from './base';
+import { elements, DOMStrings } from './base';
 
 const alreadyCreated = [];
 
@@ -37,6 +37,18 @@ export const addActivityToUI = (exerciseList, bodyPart) => {
     }
     newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
     document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
+}
+
+export const clearFields = () => {
+    let fields, fieldsArr;
+
+    fields = document.querySelectorAll(`${DOMStrings.bodyPartInputString}, ${DOMStrings.exerciseInputString}, ${DOMStrings.weightInputString}`);
+
+    fieldsArr = Array.prototype.slice.call(fields);
+
+    fieldsArr.forEach(element =>  element.value = '' );
+
+    fieldsArr[0].focus();
 }
 
             

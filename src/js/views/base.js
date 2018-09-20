@@ -5,3 +5,9 @@ export const elements = {
     weightInput: document.querySelector('.js--weight-input'),
     exerciseList: '.js--list'
 };
+
+export const DOMStrings = {
+    bodyPartInputString:'.js--bodypart-input',
+    exerciseInputString:'.js--exercise-input',
+    weightInputString:'.js--weight-input'
+};
