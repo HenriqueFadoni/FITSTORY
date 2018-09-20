@@ -36,17 +36,22 @@ export const addActivityToUI = (exerciseList, bodyPart) => {
         html = `
         <table>
             <thead>
-                <th colspan="2">%bodyPart%</td>
+                <tr>
+                    <th class="table-title" colspan="2">%bodyPart%</th>
+                </tr>
             </thead>
             <thead>
-                <th>Exercise</td>
-                <th>Weight</td>
+                <tr>
+                    <th class="sub-title-table">Exercicio</th>
+                    <th class="sub-title-table">Peso</th>
+                </tr>
             </thead>
             <tbody id="${bodyPartLower}">
-                <td>%exercise%</td>
-                <td>%weight%</td>
-            </tbody>
-        </table>`;
+                <tr>
+                    <td>%exercise%</td>
+                    <td>%weight%</td>
+                </tr>
+        </tbody>`;
 
         newHtml = html.replace(`%bodyPart%`, bodyPartLower);
         newHtml = newHtml.replace(`%exercise%`, lastAdded[0]);
@@ -56,3 +61,5 @@ export const addActivityToUI = (exerciseList, bodyPart) => {
     }
     document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
 }
+
+            
