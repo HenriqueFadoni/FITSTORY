@@ -10,30 +10,49 @@ export const getInput = () => {
     }
 }
 
-export const addActivityToUI = (exerciseList,bodyPart) => {
-    let html, newHtml, idx, lastAdded, bodyPartLower;
+export const addActivityToUI = (exerciseList, bodyPart) => {
+    let html, newHtml, idx, lastAdded, bodyPartLower, position;
 
     bodyPartLower = bodyPart.toLowerCase();
     idx = exerciseList[`${bodyPartLower}`].length - 1;
     lastAdded = Object.values(exerciseList[`${bodyPartLower}`][idx]);
 
     //SE O ELEMENTO JA EXISTIR
-    if(alreadyCreated.find(bodyPartLower) !== undefined || alreadyCreated.find(bodyPart) !== null){
-        let position = `.${bodyPartLower}`;
-    
-        html = `<ul><li>%exercise%</li><li>%weight%</li></ul>`;
+    if (alreadyCreated.includes(bodyPartLower)) {
+        position = `#${bodyPartLower}`;
+
+        html = `
+            <td>%exercise%</td>
+            <td>%weight%</td>
+        `;
 
         newHtml = html.replace(`%exercise%`, lastAdded[0]);
         newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
-
-        document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
-    } 
+    }
     //SE O ELEMENTO N EXISTIR
     else {
-        AlreadyCreated.push(bodyPartLower);
-    }
-    
+        position = elements.exerciseList;
 
-    console.log(exerciseList);
-    console.log(lastAdded);
+        html = `
+        <table>
+            <thead>
+                <th colspan="2">%bodyPart%</td>
+            </thead>
+            <thead>
+                <th>Exercise</td>
+                <th>Weight</td>
+            </thead>
+            <tbody id="${bodyPartLower}">
+                <td>%exercise%</td>
+                <td>%weight%</td>
+            </tbody>
+        </table>`;
+
+        newHtml = html.replace(`%bodyPart%`, bodyPartLower);
+        newHtml = newHtml.replace(`%exercise%`, lastAdded[0]);
+        newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
+
+        alreadyCreated.push(bodyPartLower);
+    }
+    document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
 }
