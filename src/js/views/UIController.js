@@ -17,48 +17,25 @@ export const addActivityToUI = (exerciseList, bodyPart) => {
     idx = exerciseList[`${bodyPartLower}`].length - 1;
     lastAdded = Object.values(exerciseList[`${bodyPartLower}`][idx]);
 
-    //SE O ELEMENTO JA EXISTIR
     if (alreadyCreated.includes(bodyPartLower)) {
         position = `#${bodyPartLower}`;
 
-        html = `
-            <td>%exercise%</td>
-            <td>%weight%</td>
-        `;
+        html = `<td>%exercise%</td><td>%weight%</td>`;
 
         newHtml = html.replace(`%exercise%`, lastAdded[0]);
-        newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
     }
-    //SE O ELEMENTO N EXISTIR
     else {
         position = elements.exerciseList;
 
-        html = `
-        <table>
-            <thead>
-                <tr>
-                    <th class="table-title" colspan="2">%bodyPart%</th>
-                </tr>
-            </thead>
-            <thead>
-                <tr>
-                    <th class="sub-title-table">Exercicio</th>
-                    <th class="sub-title-table">Peso</th>
-                </tr>
-            </thead>
-            <tbody id="${bodyPartLower}">
-                <tr>
-                    <td>%exercise%</td>
-                    <td>%weight%</td>
-                </tr>
-        </tbody>`;
+        html = `<table><thead><tr><th class="table-title" colspan="2">%bodyPart%</th></tr></thead><thead><tr>
+        <th class="sub-title-table">Exercicio</th><th class="sub-title-table">Peso</th></tr></thead><tbody id="${bodyPartLower}">
+        <tr><td>%exercise%</td><td>%weight%</td></tr></tbody>`;
 
         newHtml = html.replace(`%bodyPart%`, bodyPart.toUpperCase());
-        newHtml = newHtml.replace(`%exercise%`, lastAdded[0]);
-        newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
-
+        newHtml = newHtml.replace(`%exercise%`, lastAdded[0]);;
         alreadyCreated.push(bodyPartLower);
     }
+    newHtml = newHtml.replace(`%weight%`, lastAdded[1]);
     document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
 }
 
