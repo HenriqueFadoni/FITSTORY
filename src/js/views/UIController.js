@@ -20,16 +20,22 @@ export const addActivityToUI = (exerciseList, bodyPart) => {
     if (alreadyCreated.includes(bodyPartLower)) {
         position = `#${bodyPartLower}`;
 
-        html = `<td>%exercise%</td><td>%weight%</td>`;
+        html = `<tr>
+        <td class="table-body" colspan="2">%exercise%</td><td class="table-body">%weight%</td>
+        <td class="table-body icon-table-body"><ion-icon name="close-circle-outline" class="close-circle-outline"></ion-icon>
+        </td> </tr></tbody>`;
 
         newHtml = html.replace(`%exercise%`, lastAdded[0]);
     }
     else {
         position = elements.exerciseList;
 
-        html = `<table><thead><tr><th class="table-title" colspan="2">%bodyPart%</th></tr></thead><thead><tr>
-        <th class="sub-title-table">Exercicio</th><th class="sub-title-table">Peso</th></tr></thead><tbody id="${bodyPartLower}">
-        <tr><td>%exercise%</td><td>%weight%</td></tr></tbody>`;
+        html = `<table><thead><tr><th class="main-header table-title" colspan="3">%bodyPart%</th>
+        <th class="main-header icon-table-head-1"><ion-icon name="close-circle-outline" class="close-circle-outline"></ion-icon></th></tr></thead>
+        <thead><tr><th class="sub-title-table" colspan="2">Exercicio</th><th class="sub-title-table" colspan="2">Peso</th></tr></thead>
+        <tbody id="${bodyPartLower}"><tr><td class="table-body" colspan="2">%exercise%</td> <td class="table-body">%weight%</td>
+        <td class="table-body icon-table-body"><ion-icon name="close-circle-outline" class="close-circle-outline"></ion-icon></td></tr>
+        </tbody></table>`;
 
         newHtml = html.replace(`%bodyPart%`, bodyPart.toUpperCase());
         newHtml = newHtml.replace(`%exercise%`, lastAdded[0]);;
@@ -51,15 +57,3 @@ export const clearFields = () => {
     fieldsArr[0].focus();
 }
 
-export const hideShowTable = () => {
-    let x = document.getElementsByClassName("hideShow");
-    if ( x[0].style.display === "none" && x[1].style.display === "none" ) {
-        x[0].style.display = "contents";
-        x[1].style.display = "contents";
-        document.getElementById("arrow-round").setAttribute('name','arrow-round-up');
-    } else {
-        x[0].style.display = "none";
-        x[1].style.display = "none";
-        document.getElementById("arrow-round").setAttribute('name','arrow-round-down');
-    }
-}

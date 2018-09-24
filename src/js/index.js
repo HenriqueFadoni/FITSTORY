@@ -22,8 +22,9 @@ const ctrlAddItem = () => {
     } else {
         alert("Please, input some data.");
     }
+    
 }
 
 
 elements.addButton.addEventListener('click', ctrlAddItem);
-elements.hideShowButton.addEventListener(`click`, UICtrl.hideShowTable);
+
