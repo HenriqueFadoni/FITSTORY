@@ -51,4 +51,15 @@ export const clearFields = () => {
     fieldsArr[0].focus();
 }
 
-            
+export const hideShowTable = () => {
+    let x = document.getElementsByClassName("hideShow");
+    if ( x[0].style.display === "none" && x[1].style.display === "none" ) {
+        x[0].style.display = "contents";
+        x[1].style.display = "contents";
+        document.getElementById("arrow-round").setAttribute('name','arrow-round-up');
+    } else {
+        x[0].style.display = "none";
+        x[1].style.display = "none";
+        document.getElementById("arrow-round").setAttribute('name','arrow-round-down');
+    }
+}

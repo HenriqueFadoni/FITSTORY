@@ -117,9 +117,6 @@ input[type=submit]:active {
     background-color: rgb(4, 152, 250);
 }
 
-
-
-
 /* -------------------------------- */
 /* Table Style */
 /* -------------------------------- */
@@ -131,6 +128,9 @@ table {
     margin-bottom: 40px;
 }
 thead { border: none; }
+.hideShow { 
+    display: contents;
+}
 tr {
     height: 40px;
     overflow-x: hidden;
@@ -173,7 +173,7 @@ td {
     color:rgba(255, 255, 255, 0);
 }
 .icon-table-body {
-    color: rgba(0, 0, 0, 0.062);
+    color: rgba(0, 0, 0, 0.060);
 }
 
 /* -------------------------------- */
@@ -192,9 +192,5 @@ tr:hover {
 .table-body:hover + .icon-table-body {
     color: rgb(0, 0, 0);
 }
-
-/* -------------------------------- */
-/* LIST */
-/* -------------------------------- */
 
 *:focus { outline: none };

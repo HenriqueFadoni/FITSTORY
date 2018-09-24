@@ -26,3 +26,4 @@ const ctrlAddItem = () => {
 
 
 elements.addButton.addEventListener('click', ctrlAddItem);
+elements.hideShowButton.addEventListener(`click`, UICtrl.hideShowTable);
