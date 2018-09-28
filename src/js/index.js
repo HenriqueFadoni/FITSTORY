@@ -3,50 +3,40 @@ import * as UICtrl from "./views/UIController";
 import { elements } from './views/base';
 
 /** GLOBAL APP CONTROLLER */
+let loadList = {};
 
 const controller = () => {
     elements.addButton.addEventListener('click', ctrlAddItem);
-    //document.querySelector('btn-delete-list').addEventListener('click', ctrlDeleteList);
 }
 
-
 const ctrlAddItem = () => {
-    let input;
-
     // 1 - Get the field input data
-    input = UICtrl.getInput();
+    const { bodyPart, exercise, weight } = UICtrl.getInput();
 
-    if (input.bodyPart !== "" && input.exercise !== "" && input.weight !== "") {
+    if (bodyPart && exercise && weight) {
+        const lowerCaseBodyPart = bodyPart.toLowerCase();
 
         // 2- Add the item to the dataController
-        const newActivityList = DataCtrl.addActivityToList(input.bodyPart, input.exercise, input.weight);
+        const newActivityList = DataCtrl.addActivityToList(lowerCaseBodyPart, exercise, weight);
         // 3- Add the item to the UI
-        UICtrl.addActivityToUI(newActivityList);
+        UICtrl.addActivityToUI(lowerCaseBodyPart, newActivityList[lowerCaseBodyPart]);
         // 4- Clear the fields
         UICtrl.clearFields();
 
     } else {
         alert("Please, input some data.");
     }
-    
-}
-
-const ctrlDeleteList = event => {
-    let listBodyPart = event.target.parentNode.parentNode.parentNode.id;
-
-    if(listBodyPart){
-        console.log(listBodyPart);
-    }
 }
 
 window.addEventListener('load', () => {
-    DataCtrl.loadStorage();
+    loadList = DataCtrl.loadStorage();
+    //loadList = { "a": [{ "exercise": "a", "weight": "1" }, { "exercise": "a", "weight": "2" }], "b": [{ "exercise": "b", "weight": "1" }], "c": [{ "exercise": "c", "weight": "1" }, { "exercise": "c", "weight": "2" }] }
+
+    Object.keys(loadList) // [a,b,c]
+        .forEach(prop => UICtrl.addActivityToUI(prop, loadList[prop])); // [{ "exercise": "a", "weight": "1" }, { "exercise": "a", "weight": "2" }]
 });
 
 controller();
-
-
-
 
 //Object.keys(dataRecovery) // Object.keys vai retornar: [perna,biceps]
 //    .map(key => ( {[key]: dataRecovery[key]} )) // Map vai retornar: [{perna: [{exercicio,peso}]}, {biceps: [{exercicio,perna}]}]

@@ -1,20 +1,15 @@
 let activities = {};
-let data = [];
 
 export const addActivityToList = (bodyPart, exercise, weight) => {
-    
-
-    let lowerCaseBodyPart = bodyPart.toLowerCase();
-    
-    if (!activities[lowerCaseBodyPart]){
-        activities[lowerCaseBodyPart] = [];
+    if (!activities[bodyPart]){
+        activities[bodyPart] = [];
     }
 
-    activities[lowerCaseBodyPart].push({exercise, weight});
+    activities[bodyPart].push({exercise, weight});
 
     persistData(activities);
 
-    return activities;
+    return activities; // {perna}
 }
 
 export const persistData = list => {
@@ -22,10 +17,8 @@ export const persistData = list => {
 }
 
 export const loadStorage = () => {
-    
-    data = JSON.parse(localStorage.getItem('actData')) || {};
-
-    activities = Object.keys(data).forEach(key => ( {[key]: data[key]} ));
-    // 1 - Object.keys vai retornar: [perna,biceps] // 2 - Map vai retornar: [{perna: [{exercicio,peso}]}, {biceps: [{exercicio,perna}]}]
-    console.log(activities);
+    activities = JSON.parse(localStorage.getItem('actData')) || {};
+    Object.keys(activities).forEach(key => ( {[key]: activities[key]} ));
+    return activities;    
 }
+// 1 - Object.keys vai retornar: [perna,biceps] // 2 - Map vai retornar: [{perna: [{exercicio,peso}]}, {biceps: [{exercicio,perna}]}]
