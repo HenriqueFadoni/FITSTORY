@@ -1,0 +1,131 @@
+[33mcommit 439cf7ac2e1628da8352cf1a029afbc9d2f46b24[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Fri Sep 28 10:31:24 2018 -0300
+
+    index.js
+
+[33mcommit d171a767a521b4e6579e52db8201573e55db231e[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Tue Sep 25 19:56:00 2018 -0300
+
+    Fixing Bugs - Part 1
+
+[33mcommit ca4dfb125389719a51b59f340cf19f263fab76c1[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Mon Sep 24 14:31:47 2018 -0300
+
+    Deleting Arrow-Round Function
+
+[33mcommit d53cc0926dd02e8bd1e03a42ac0e551d1f1cfb0c[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Mon Sep 24 13:16:29 2018 -0300
+
+    Button HIDE/SHOW tables
+
+[33mcommit 97d94ae37222e828fc9a34ad10f04568f578a0f0[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Sat Sep 22 16:33:15 2018 -0300
+
+    Adding buttons to Tables
+
+[33mcommit 050e9fb92427e1e479cc254bc78695ffd5e5056a[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Thu Sep 20 14:26:30 2018 -0300
+
+    ClearingFields from UICtrl
+
+[33mcommit 5ed1c7aaaa999eefebc77d0edd22078d4767888c[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Thu Sep 20 14:13:25 2018 -0300
+
+    Minor fixes inside UICtrl.AddActivityToUI
+
+[33mcommit a6bbd3d5fc47477c24ec5652636924f38c0bfff5[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Thu Sep 20 14:03:04 2018 -0300
+
+    Deleting Button
+
+[33mcommit 2acc91a519756686add3367e3566533ba00ccba7[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Thu Sep 20 13:59:49 2018 -0300
+
+    Diplaying Body Part with the Capital Letter
+
+[33mcommit fe649b9dd79b44c932c225149beb5ed7dba8b626[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Thu Sep 20 13:40:18 2018 -0300
+
+    Re-Styling Tables
+
+[33mcommit 61ec2e95f9068b1f715d7b5fe2f08172ca432642[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Thu Sep 20 11:59:33 2018 -0300
+
+    Editing addActivityToUI - Fixing Errors
+
+[33mcommit c56b44bdabf8cd3f497867309386397f8fe0a203[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Wed Sep 19 20:33:41 2018 -0300
+
+    Building addActivityToUI
+
+[33mcommit 1d8cc5d11446baf8026c507193e9b33bc632eb17[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Wed Sep 19 13:46:47 2018 -0300
+
+    ReCreating UIController and dataController
+
+[33mcommit 681747695bbc22aa62f1ba708fb61aa3b6eb74ed[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Tue Sep 18 18:00:56 2018 -0300
+
+    Adding Activity to the UIController
+
+[33mcommit 97a727f3c540f09730bba6ace19272aaf7202281[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Tue Sep 18 15:35:35 2018 -0300
+
+    Fixing Data Controller and Creating UIController
+
+[33mcommit 24f826cef16fb073105413e12efeedd9416f9a29[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Tue Sep 18 12:18:40 2018 -0300
+
+    Adding - DataController
+
+[33mcommit 898241923c4549b6332f7095f03c374366b095c0[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Mon Sep 17 17:34:48 2018 -0300
+
+    Reading Form Fields
+
+[33mcommit 5f3b2e25f6dff6145eaad627f93a297508be0c84[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Mon Sep 17 12:01:55 2018 -0300
+
+    Setting up Babel
+
+[33mcommit b2dae385db01d20661adfde6c0c0feb9ee3a821e[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Mon Sep 17 11:32:21 2018 -0300
+
+    Organazing Aplication and Installing dependencies
+
+[33mcommit 31dc4ecaf7365a46a73ec34f74d2404d1175abe3[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Mon Sep 17 11:05:28 2018 -0300
+
+    Styling Table List
+
+[33mcommit d7ad0d4d6362da89e94e42d48e72c514ac521911[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Mon Sep 17 10:51:49 2018 -0300
+
+    Styling table-btn
+
+[33mcommit 507b15fc7bbab16b8da664fe82dd62fbf50c527a[m
+Author: Henrique de O. Fadoni <HenriqueFadoni@users.noreply.github.com>
+Date:   Sun Sep 16 12:50:19 2018 -0300
+
+    Creating-Head
