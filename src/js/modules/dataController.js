@@ -12,6 +12,15 @@ export const addActivityToList = (bodyPart, exercise, weight) => {
     return activities; // {perna}
 }
 
+export const deleteList = bpDelete => {
+
+    if(activities[bpDelete]){
+        console.log(activities);
+        delete activities[bpDelete];
+        console.log(activities);
+    }
+}
+
 export const persistData = list => {
     localStorage.setItem('actData', JSON.stringify(list));
 }

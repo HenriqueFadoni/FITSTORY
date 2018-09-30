@@ -65,12 +65,29 @@ const tableExist = (id, bpLowerCase, exercicio, peso) => {
 const createTable = (id, bpLowerCase, exercicio, peso) => {
     position = elements.exerciseList;
 
-    html = `<table id="${bpLowerCase}-table"><thead><tr><th class="main-header table-title" colspan="3">%bodyPart%</th>
-    <th class="main-header icon-table-head-1"><ion-icon name="close-circle-outline" class="close-circle-outline btn-delete-list"></ion-icon></th></tr></thead>
-    <thead><tr><th class="sub-title-table" colspan="2">Exercicio</th><th class="sub-title-table" colspan="2">Peso</th></tr></thead>
-    <tbody id="${bpLowerCase}"><tr id="%idx%"><td class="table-body" colspan="2">%exercise%</td> <td class="table-body">%weight%</td>
-    <td class="table-body icon-table-body"><ion-icon name="close-circle-outline" class="close-circle-outline"></ion-icon></td></tr>
-    </tbody></table>`;
+    html = `<table id="${bpLowerCase}-table">
+    <thead>
+        <tr>
+            <th class="main-header table-title" colspan="3">%bodyPart%</th>
+            <th class="main-header icon-table-head-1">
+                <ion-icon name="close-circle-outline" class="close-circle-outline btn-delete-list">
+                </ion-icon>
+            </th>
+        </tr>
+    </thead>
+    <thead>
+        <tr>
+            <th class="sub-title-table" colspan="2">Exercicio</th>
+            <th class="sub-title-table" colspan="2">Peso</th>
+        </tr>
+    </thead>
+    <tbody id="${bpLowerCase}">
+        <tr id="%idx%">
+            <td class="table-body" colspan="2">%exercise%</td>
+            <td class="table-body">%weight%</td>
+            <td class="table-body icon-table-body"><ion-icon name="close-circle-outline" class="close-circle-outline"></ion-icon></td></tr>
+    </tbody>
+</table>`;
 
     newHtml = html.replace(`%id%`, id);
     newHtml = newHtml.replace(`%bodyPart%`, bpLowerCase.toUpperCase());

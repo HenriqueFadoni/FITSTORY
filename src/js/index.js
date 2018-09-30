@@ -7,6 +7,7 @@ let loadList = {};
 
 const controller = () => {
     elements.addButton.addEventListener('click', ctrlAddItem);
+    document.querySelector(elements.exerciseList).addEventListener('click',deleteTable);
 }
 
 const ctrlAddItem = () => {
@@ -28,6 +29,21 @@ const ctrlAddItem = () => {
     }
 }
 
+const deleteTable = event => {
+    let splitID, idDelete;
+
+    let tableID = event.target.parentNode.parentNode.parentNode.parentNode.id;
+
+    if(tableID){
+        splitID = tableID.split('-');
+        idDelete = splitID[0];
+
+        // 1- Delete the item from the data structure
+        DataCtrl.deleteList(idDelete);
+
+    }
+
+}
 window.addEventListener('load', () => {
     loadList = DataCtrl.loadStorage();
     //loadList = { "a": [{ "exercise": "a", "weight": "1" }, { "exercise": "a", "weight": "2" }], "b": [{ "exercise": "b", "weight": "1" }], "c": [{ "exercise": "c", "weight": "1" }, { "exercise": "c", "weight": "2" }] }
