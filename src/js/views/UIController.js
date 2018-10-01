@@ -112,6 +112,13 @@ const createTable = (id, bpLowerCase, exercicio, peso) => {
     document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
 }
 
+
+export const deleteList = tableID => {
+    const table = document.getElementById(tableID);
+    table.parentNode.removeChild(table);
+}
+
+
 export const clearFields = () => {
     let fields, fieldsArr;
 

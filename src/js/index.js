@@ -41,6 +41,9 @@ const deleteTable = event => {
         // 1- Delete the item from the data structure
         DataCtrl.deleteList(idDelete);
 
+        // 1- Delete Item from UI
+        UICtrl.deleteList(tableID);
+
     }
 
 }
