@@ -26,12 +26,12 @@ const displayActivity = (bpLowerCase, array) => {
     const peso = array[1];
 
     if (!alreadyCreatedExercise.includes(exercicio)) {
-        createID(id);
+        const idx = createID();
 
         if (alreadyCreated.includes(bpLowerCase)) {
-            tableExist(id, bpLowerCase, exercicio, peso);
+            tableExist(idx, bpLowerCase, exercicio, peso);
         } else {
-            createTable(id, bpLowerCase, exercicio, peso);
+            createTable(idx, bpLowerCase, exercicio, peso);
         }
 
         alreadyCreatedExercise.push(exercicio);
@@ -39,19 +39,19 @@ const displayActivity = (bpLowerCase, array) => {
         console.log(`exercicio já foi criado`);
     }
 }
-const createID = id => {
+const createID = () => {
     if (id === undefined || id === null) {
-        id = 0;
+        return id = 0;
     } else {
-        id += 1;
+        return id += 1;
     }
 }
 
-const tableExist = (id, bpLowerCase, exercicio, peso) => {
+const tableExist = (idx, bpLowerCase, exercicio, peso) => {
     position = `#${bpLowerCase}`;
 
     html = `
-    <tr id="%id%">
+    <tr id="%idx%">
         <td class="table-body" colspan="2">%exercise%</td>
         <td class="table-body">%weight%</td>
         <td class="table-body icon-table-body">
@@ -62,14 +62,14 @@ const tableExist = (id, bpLowerCase, exercicio, peso) => {
         </td>
     </tr>`;
 
-    newHtml = html.replace(`%id%`, id);
+    newHtml = html.replace(`%idx%`, idx);
     newHtml = newHtml.replace(`%exercise%`, exercicio);
     newHtml = newHtml.replace(`%weight%`, peso);
 
     document.querySelector(position).insertAdjacentHTML('beforeend', newHtml);
 }
 
-const createTable = (id, bpLowerCase, exercicio, peso) => {
+const createTable = (idx, bpLowerCase, exercicio, peso) => {
     position = elements.exerciseList;
 
     html = `
@@ -103,7 +103,7 @@ const createTable = (id, bpLowerCase, exercicio, peso) => {
     </tbody>
 </table>`;
 
-    newHtml = html.replace(`%id%`, id);
+    newHtml = html.replace(`%idx%`, idx);
     newHtml = newHtml.replace(`%bodyPart%`, bpLowerCase.toUpperCase());
     newHtml = newHtml.replace(`%exercise%`, exercicio);
     newHtml = newHtml.replace(`%weight%`, peso);
@@ -116,6 +116,11 @@ const createTable = (id, bpLowerCase, exercicio, peso) => {
 export const deleteList = tableID => {
     const table = document.getElementById(tableID);
     table.parentNode.removeChild(table);
+}
+
+export const deleteItem = (tableID, itemID) => {
+    const item = document.getElementById(itemID);
+    item.parentNode.removeChild(item);
 }
 
 

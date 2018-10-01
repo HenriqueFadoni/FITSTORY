@@ -8,6 +8,7 @@ let loadList = {};
 const controller = () => {
     elements.addButton.addEventListener('click', ctrlAddItem);
     document.querySelector(elements.exerciseList).addEventListener('click',deleteTable);
+    document.querySelector(elements.exerciseList).addEventListener('click', deleteItem);
 }
 
 const ctrlAddItem = () => {
@@ -47,6 +48,19 @@ const deleteTable = event => {
     }
 
 }
+
+const deleteItem = event => {
+    
+    const tableID = event.target.parentNode.parentNode.parentNode.parentNode.id;
+    const itemID = event.target.parentNode.parentNode.parentNode.id;
+
+    console.log(tableID, itemID);
+    if (tableID && itemID){
+        DataCtrl.deleteItem(tableID, itemID);
+        UICtrl.deleteItem(tableID, itemID);
+    }
+}
+
 window.addEventListener('load', () => {
     loadList = DataCtrl.loadStorage();
     //loadList = { "a": [{ "exercise": "a", "weight": "1" }, { "exercise": "a", "weight": "2" }], "b": [{ "exercise": "b", "weight": "1" }], "c": [{ "exercise": "c", "weight": "1" }, { "exercise": "c", "weight": "2" }] }

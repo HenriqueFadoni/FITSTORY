@@ -1,25 +1,44 @@
 let activities = {};
+let id;
 
 export const addActivityToList = (bodyPart, exercise, weight) => {
     if (!activities[bodyPart]){
         activities[bodyPart] = [];
     }
 
-    activities[bodyPart].push({exercise, weight});
+    let idx = createID();
+    activities[bodyPart].push({exercise, weight, idx});
 
     persistData(activities);
-
     return activities; // {perna}
 }
 
-export const deleteList = bpDelete => {
+const createID = () => {
+    if (id === undefined || id === null) {
+        return id = 0;
+    } else {
+        return id += 1;
+    }
+}
 
-    if(activities[bpDelete]){
-        delete activities[bpDelete];
+export const deleteList = tableID => {
+
+    if(activities[tableID]){
+        delete activities[tableID];
         console.log(activities);
     }
 
     persistData(activities);
+}
+
+export const deleteItem = (tableID, itemID) => {
+    if(activities[tableID]){
+        const intID = parseInt(itemID);
+        const item = activities[tableID].find( arr => arr.idx === intID);
+        const indexItem = activities[tableID].indexOf(item);
+        activities[tableID].splice(indexItem, 1);
+        console.log(activities[tableID]);
+    }
 }
 
 export const persistData = list => {
