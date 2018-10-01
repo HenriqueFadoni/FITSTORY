@@ -32,9 +32,9 @@ const ctrlAddItem = () => {
 const deleteTable = event => {
     let splitID, idDelete;
 
-    let tableID = event.target.parentNode.parentNode.parentNode.parentNode.id;
+    const tableID = event.target.parentNode.parentNode.parentNode.parentNode.id;
 
-    if(tableID){
+    if(tableID && event.target.matches(' .icon-table-head-1, .icon-table-head-1 *')){
         splitID = tableID.split('-');
         idDelete = splitID[0];
 

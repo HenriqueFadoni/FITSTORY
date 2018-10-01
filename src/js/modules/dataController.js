@@ -15,10 +15,11 @@ export const addActivityToList = (bodyPart, exercise, weight) => {
 export const deleteList = bpDelete => {
 
     if(activities[bpDelete]){
-        console.log(activities);
         delete activities[bpDelete];
         console.log(activities);
     }
+
+    persistData(activities);
 }
 
 export const persistData = list => {
